@@ -1,4 +1,4 @@
-package Sometest;
+package DemoQaPages;
 
 import BasePackage.BaseSeleniumPage;
 import org.openqa.selenium.By;
