@@ -23,8 +23,11 @@ public class RegisterPage extends BaseSeleniumPage {
     @FindBy(xpath = "//*[@id='password']")
     private WebElement passwordField;
 
-    @FindBy(xpath = "//*[@class='rc-anchor-center-item rc-anchor-checkbox-label']") //найти правильный xpath к капче
+    @FindBy(xpath = "//*[@class='rc-anchor-center-container']") //найти правильный xpath к капче
     private WebElement captcha;
+
+    @FindBy(xpath = "//*[@title='reCAPTCHA']")
+    private WebElement captchaFrame;
 
     @FindBy(xpath = "//*[@id='register']")
     private WebElement registerButton;
@@ -54,7 +57,9 @@ public class RegisterPage extends BaseSeleniumPage {
         lastNameField.sendKeys(lastName);
         userNameField.sendKeys(userName);
         passwordField.sendKeys(password);
+        driver.switchTo().frame(captchaFrame);
         captcha.click();
+        driver.switchTo().parentFrame();
         registerButton.click();
         return this;
     }
