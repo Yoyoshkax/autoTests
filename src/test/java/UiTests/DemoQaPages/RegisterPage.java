@@ -1,7 +1,7 @@
-package DemoQaPages;
+package UiTests.DemoQaPages;
 
-import BasePackage.BaseSeleniumPage;
-import Helpers.TestValues;
+import UiTests.BasePackage.BaseSeleniumPage;
+import UiTests.Helpers.TestValues;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -34,13 +34,18 @@ public class RegisterPage extends BaseSeleniumPage {
     @FindBy(xpath = "//*[@id='register']")
     private WebElement registerButton;
 
-    @FindBy(xpath = "//*[@id='gotoLogin']")
+    @FindBy(xpath = "//*[@id='gotologin']")
     private WebElement backToLoginButton;
 
 
     public RegisterPage() {
         driver.get("https://demoqa.com/register");
         PageFactory.initElements(driver,this);
+    }
+
+    public LoginPage doLogin(){
+        backToLoginButton.click();
+        return new LoginPage();
     }
 
     public RegisterPage checkAllElements(){

@@ -1,4 +1,4 @@
-package Helpers;
+package UiTests.Helpers;
 
 public class TestValues {
     public static final String firstName = "Raman";

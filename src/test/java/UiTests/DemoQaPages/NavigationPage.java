@@ -1,6 +1,6 @@
-package DemoQaPages;
+package UiTests.DemoQaPages;
 
-import BasePackage.BaseSeleniumPage;
+import UiTests.BasePackage.BaseSeleniumPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

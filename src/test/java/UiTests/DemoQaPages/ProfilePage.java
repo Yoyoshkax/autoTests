@@ -1,6 +1,6 @@
-package DemoQaPages;
+package UiTests.DemoQaPages;
 
-import BasePackage.BaseSeleniumPage;
+import UiTests.BasePackage.BaseSeleniumPage;
 
 public class ProfilePage extends BaseSeleniumPage {
 

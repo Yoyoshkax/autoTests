@@ -1,4 +1,4 @@
-package BasePackage;
+package UiTests.BasePackage;
 
 import org.openqa.selenium.WebDriver;
 

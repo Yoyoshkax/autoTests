@@ -1,7 +1,7 @@
-package DemoQaPages;
+package UiTests.DemoQaPages;
 
-import BasePackage.BaseSeleniumPage;
-import Helpers.TestValues;
+import UiTests.BasePackage.BaseSeleniumPage;
+import UiTests.Helpers.TestValues;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -21,7 +21,6 @@ public class LoginPage extends BaseSeleniumPage {
     private WebElement newUserButton;
 
     public LoginPage() {
-        driver.get("https://demoqa.com/login");
         PageFactory.initElements(driver,this);
     }
 
