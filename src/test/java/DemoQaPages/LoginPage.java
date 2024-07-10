@@ -1,14 +1,12 @@
 package DemoQaPages;
 
 import BasePackage.BaseSeleniumPage;
+import Helpers.TestValues;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BaseSeleniumPage {
-
-    public final String userName = "Yoyoshka";
-    public final String password = "Test123321@";
 
     @FindBy(xpath = "//*[@id='userName']")
     private WebElement userField;
@@ -28,8 +26,8 @@ public class LoginPage extends BaseSeleniumPage {
     }
 
     public LoginPage auth(){
-        userField.sendKeys(userName);
-        passwordField.sendKeys(password);
+        userField.sendKeys(TestValues.userName);
+        passwordField.sendKeys(TestValues.password);
         loginButton.click();
         return this;
     }

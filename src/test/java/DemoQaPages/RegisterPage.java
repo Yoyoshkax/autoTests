@@ -1,15 +1,14 @@
 package DemoQaPages;
 
 import BasePackage.BaseSeleniumPage;
+import Helpers.TestValues;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static java.lang.Thread.sleep;
+
 public class RegisterPage extends BaseSeleniumPage {
-    public final String firstName = "Raman";
-    public final String lastName = "Hameza";
-    public final String userName = "Yoyoshka";
-    public final String password = "Test123321@";
 
     @FindBy(xpath = "//*[@id='firstname']")
     private WebElement firstNameField;
@@ -25,6 +24,9 @@ public class RegisterPage extends BaseSeleniumPage {
 
     @FindBy(xpath = "//*[@class='rc-anchor-center-container']") //найти правильный xpath к капче
     private WebElement captcha;
+
+    @FindBy(xpath = "//*[@class='recaptcha-checkbox goog-inline-block recaptcha-checkbox-unchecked rc-anchor-checkbox recaptcha-checkbox-checked' and @id='recaptcha-anchor']")
+    private WebElement checkedCaptcha;
 
     @FindBy(xpath = "//*[@title='reCAPTCHA']")
     private WebElement captchaFrame;
@@ -52,15 +54,17 @@ public class RegisterPage extends BaseSeleniumPage {
         return this;
     }
 
-    public RegisterPage registerNewUser(){
-        firstNameField.sendKeys(firstName);
-        lastNameField.sendKeys(lastName);
-        userNameField.sendKeys(userName);
-        passwordField.sendKeys(password);
+    public RegisterPage registerNewUser() throws InterruptedException {
+        firstNameField.sendKeys(TestValues.firstName);
+        lastNameField.sendKeys(TestValues.lastName);
+        userNameField.sendKeys(TestValues.userName);
+        passwordField.sendKeys(TestValues.password);
         driver.switchTo().frame(captchaFrame);
         captcha.click();
+        sleep(5000);
         driver.switchTo().parentFrame();
         registerButton.click();
         return this;
     }
+
 }

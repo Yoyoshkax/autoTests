@@ -32,7 +32,7 @@ public class FormsTest extends BaseTest {
     }
 
     @Test
-    public void registerNewUser(){
+    public void registerNewUser() throws InterruptedException {
         RegisterPage registerPage = new RegisterPage();
         registerPage.registerNewUser();
     }
