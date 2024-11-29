@@ -1,10 +1,7 @@
 package UiTests.Sometest;
 
 import UiTests.BasePackage.BaseTest;
-import UiTests.DemoQaPages.LoginPage;
-import UiTests.DemoQaPages.NavigationPage;
-import UiTests.DemoQaPages.PracticeFormPage;
-import UiTests.DemoQaPages.RegisterPage;
+import UiTests.DemoQaPages.*;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -47,5 +44,13 @@ public class FormsTest extends BaseTest {
                 .registerNewUser()
                 .doLogin()
                 .auth();
+    }
+
+    @Test
+    public void uploadFileTest() throws InterruptedException {
+        UploadAndDownloadPage uploadAndDownloadPage = new UploadAndDownloadPage();
+        uploadAndDownloadPage
+                .uploadFile()
+                .downloadFile();
     }
 }

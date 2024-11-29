@@ -1,6 +1,7 @@
 package UiTests.DemoQaPages;
 
 import UiTests.BasePackage.BaseSeleniumPage;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,8 +13,6 @@ import java.util.List;
 public class PracticeFormPage extends BaseSeleniumPage {
 
     private List<WebElement> elementList;
-
-    private static final Path fileForUpload = Path.of("C:\\Users\\Yoyoshka\\Pictures\\605635d7d4d7f26f54c4e5e53b5cf069.jpg");
 
     @FindBy(xpath = "//*[text()='Elements']")
     private WebElement elements;
@@ -118,7 +117,7 @@ public class PracticeFormPage extends BaseSeleniumPage {
 
     public PracticeFormPage fillAllElements(){
         firstNameField.click();
-        firstNameField.sendKeys("Roman");
+        firstNameField.sendKeys("Raman");
         lastNameField.click();
         lastNameField.sendKeys("Hameza");
         userEmailField.click();
@@ -143,10 +142,6 @@ public class PracticeFormPage extends BaseSeleniumPage {
         submitButton.click();
 //        subjectRemove.click();
         return this;
-    }
-
-    public void uploadFile(){
-        driver.switchTo().activeElement().sendKeys((CharSequence) fileForUpload);
     }
 
     public NavigationPage moveToNavigationBarElement(){

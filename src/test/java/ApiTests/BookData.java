@@ -1,26 +1,39 @@
 package ApiTests;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Date;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class BookData {
+    @JsonProperty("isbn")
     public String isbn;
+    @JsonProperty("title")
     public String title;
+    @JsonProperty("subTitle")
     public String subTitle;
+    @JsonProperty("author")
     public String author;
-    public Date publish_date;
+    @JsonProperty("publish_date")
+    public Date publishDate;
+    @JsonProperty("publisher")
     public String publisher;
+    @JsonProperty("pages")
     public Integer pages;
+    @JsonProperty("description")
     public String description;
+    @JsonProperty("website")
     public String website;
 
 
-    public BookData(String isbn, String title, String subTitle, String author, Date publish_date, String publisher, Integer pages, String description, String website) {
+    public BookData(String isbn, String title, String subTitle, String author, Date publishDate, String publisher, Integer pages, String description, String website) {
         this.isbn = isbn;
         this.title = title;
         this.subTitle = subTitle;
         this.author = author;
-        this.publish_date = publish_date;
+        this.publishDate = publishDate;
         this.publisher = publisher;
         this.pages = pages;
         this.description = description;
@@ -43,8 +56,8 @@ public class BookData {
         return author;
     }
 
-    public Date getPublish_date() {
-        return publish_date;
+    public Date getPublishDate() {
+        return publishDate;
     }
 
     public String getPublisher() {

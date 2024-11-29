@@ -11,6 +11,7 @@ public class Specification {
 
     public static RequestSpecification requestSpec(String url){
         return new RequestSpecBuilder()
+                .setRelaxedHTTPSValidation()
                 .setBaseUri(url)
                 .setContentType(ContentType.JSON)
                 .build();
