@@ -4,7 +4,6 @@ package ApiTests;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.Date;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BookData {
@@ -17,18 +16,18 @@ public class BookData {
     @JsonProperty("author")
     public String author;
     @JsonProperty("publish_date")
-    public Date publishDate;
+    public String publishDate;
     @JsonProperty("publisher")
     public String publisher;
     @JsonProperty("pages")
-    public Integer pages;
+    public int pages;
     @JsonProperty("description")
     public String description;
     @JsonProperty("website")
     public String website;
 
 
-    public BookData(String isbn, String title, String subTitle, String author, Date publishDate, String publisher, Integer pages, String description, String website) {
+    public BookData(String isbn, String title, String subTitle, String author, String publishDate, String publisher, int pages, String description, String website) {
         this.isbn = isbn;
         this.title = title;
         this.subTitle = subTitle;
@@ -56,7 +55,7 @@ public class BookData {
         return author;
     }
 
-    public Date getPublishDate() {
+    public String getPublishDate() {
         return publishDate;
     }
 
@@ -64,7 +63,7 @@ public class BookData {
         return publisher;
     }
 
-    public Integer getPages() {
+    public int getPages() {
         return pages;
     }
 
