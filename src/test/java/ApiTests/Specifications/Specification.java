@@ -23,8 +23,18 @@ public class Specification {
                 .build();
     }
 
+    public static ResponseSpecification responseBadGateway502(){
+        return new ResponseSpecBuilder()
+                .expectStatusCode(502)
+                .build();
+    }
+
     public static void installSpec(RequestSpecification request, ResponseSpecification response){
         RestAssured.requestSpecification = request;
         RestAssured.responseSpecification = response;
+    }
+
+    public static void installSpec(RequestSpecification request){
+        RestAssured.requestSpecification = request;
     }
 }
