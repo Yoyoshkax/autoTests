@@ -11,6 +11,8 @@ public class AnimeEpisodeSwitcherRunner extends BaseTestForAnimeSwitcher {
     public void startWatching() throws InterruptedException {
         AnimeEpisodeSwitcher animeEpisodeSwitcher = new AnimeEpisodeSwitcher();
         animeEpisodeSwitcher
-                .startWatching();
+                .startWatching()
+                .continueWatch()
+                .continueWatching();
     }
 }

@@ -1,6 +1,5 @@
 package UiTests.Anime;
 
-import UiTests.BasePackage.BaseSeleniumPage;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -9,13 +8,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
+public class AnimePage extends AnimeEpisodeSwitcher {
 
-public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
-
-    public AnimeEpisodeSwitcher(){
-        driver.get("https://jut.su/bleeach/season-2/episode-37.html");
+    public AnimePage(){
         PageFactory.initElements(driver,this);
     }
+
     @FindBy(xpath = "//*[@id='my-player']/button")
     private WebElement playButton;
 
@@ -37,35 +35,28 @@ public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
     @FindBy(xpath = "//*[@id='my-player']")
     private WebElement player;
 
-    public AnimePage continueWatch(){
-        buttonNextEpidose.click();
-        return new AnimePage();
-    }
-
-
-    public AnimeEpisodeSwitcher startWatching() throws InterruptedException {
+    public AnimePage continueWatching() throws InterruptedException {
         clickPlayButton();
         changeQualityToFullHd();
         fullScreen.click();
         moveForwardUntilOpeningWillAppear();
         skipOpening();
         waitUntilButtonNextEpisodeAppear();
-//        nextEpisode();
-        continueWatch();
+        nextEpisode();
         return this;
     }
 
-    public AnimeEpisodeSwitcher clickPlayButton(){
+    public AnimePage clickPlayButton(){
         playButton.click();
         return this;
     }
 
-    public AnimeEpisodeSwitcher changeQualityToFullHd(){
+    public AnimePage changeQualityToFullHd(){
         changeVideoQuality.click();
         fullHdQuality.click();
         return this;
     }
-    public AnimeEpisodeSwitcher moveForwardUntilOpeningWillAppear() throws InterruptedException {
+    public AnimePage moveForwardUntilOpeningWillAppear() throws InterruptedException {
         Actions actions = new Actions(driver);
         Thread.sleep(2000);
         do {
@@ -75,19 +66,19 @@ public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
         return this;
     }
 
-    public AnimeEpisodeSwitcher skipOpening(){
+    public AnimePage skipOpening(){
         buttonSkipOpening.click();
         return this;
     }
 
-    public AnimeEpisodeSwitcher waitUntilButtonNextEpisodeAppear() throws InterruptedException {
+    public AnimePage waitUntilButtonNextEpisodeAppear() throws InterruptedException {
         do {
             Thread.sleep(Duration.ofSeconds(10));
         }while(!buttonNextEpidose.isDisplayed());
         return this;
     }
 
-    public AnimeEpisodeSwitcher nextEpisode(){
+    public AnimePage nextEpisode(){
         buttonNextEpidose.click();
         return this;
     }
