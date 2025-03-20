@@ -11,6 +11,7 @@ import java.time.Duration;
 public class AnimePage extends AnimeEpisodeSwitcher {
 
     public AnimePage(){
+        driver.get("https://jut.su/bleeach/season-2/episode-38.html");
         PageFactory.initElements(driver,this);
     }
 
@@ -37,7 +38,7 @@ public class AnimePage extends AnimeEpisodeSwitcher {
 
     public AnimePage continueWatching() throws InterruptedException {
         clickPlayButton();
-        changeQualityToFullHd();
+//        changeQualityToFullHd();
         fullScreen.click();
         moveForwardUntilOpeningWillAppear();
         skipOpening();
@@ -78,8 +79,8 @@ public class AnimePage extends AnimeEpisodeSwitcher {
         return this;
     }
 
-    public AnimePage nextEpisode(){
+    public void nextEpisode(){
         buttonNextEpidose.click();
-        return this;
+//        return this;
     }
 }

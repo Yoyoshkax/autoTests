@@ -50,8 +50,6 @@ public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
         moveForwardUntilOpeningWillAppear();
         skipOpening();
         waitUntilButtonNextEpisodeAppear();
-//        nextEpisode();
-        continueWatch();
         return this;
     }
 
@@ -87,8 +85,8 @@ public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
         return this;
     }
 
-    public AnimeEpisodeSwitcher nextEpisode(){
+    public void nextEpisode(){
         buttonNextEpidose.click();
-        return this;
+//        return this;
     }
 }
