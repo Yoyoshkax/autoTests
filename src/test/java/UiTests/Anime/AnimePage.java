@@ -1,5 +1,6 @@
 package UiTests.Anime;
 
+import UiTests.BasePackage.BaseSeleniumPage;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -8,10 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
-public class AnimePage extends AnimeEpisodeSwitcher {
+public class AnimePage extends BaseSeleniumPage {
 
     public AnimePage(){
-        driver.get("https://jut.su/bleeach/season-2/episode-38.html");
         PageFactory.initElements(driver,this);
     }
 
@@ -37,8 +37,8 @@ public class AnimePage extends AnimeEpisodeSwitcher {
     private WebElement player;
 
     public AnimePage continueWatching() throws InterruptedException {
+        Thread.sleep(3000);
         clickPlayButton();
-//        changeQualityToFullHd();
         fullScreen.click();
         moveForwardUntilOpeningWillAppear();
         skipOpening();
@@ -52,11 +52,6 @@ public class AnimePage extends AnimeEpisodeSwitcher {
         return this;
     }
 
-    public AnimePage changeQualityToFullHd(){
-        changeVideoQuality.click();
-        fullHdQuality.click();
-        return this;
-    }
     public AnimePage moveForwardUntilOpeningWillAppear() throws InterruptedException {
         Actions actions = new Actions(driver);
         Thread.sleep(2000);

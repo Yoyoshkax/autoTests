@@ -13,7 +13,6 @@ import java.time.Duration;
 public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
 
     public AnimeEpisodeSwitcher(){
-        driver.get("https://jut.su/bleeach/season-2/episode-37.html");
         PageFactory.initElements(driver,this);
     }
     @FindBy(xpath = "//*[@id='my-player']/button")
