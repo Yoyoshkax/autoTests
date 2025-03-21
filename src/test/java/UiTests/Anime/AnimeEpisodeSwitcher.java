@@ -73,7 +73,9 @@ public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
     }
 
     public AnimeEpisodeSwitcher skipOpening(){
-        buttonSkipOpening.click();
+        if(buttonSkipOpening.isDisplayed()){
+            buttonSkipOpening.click();
+        }
         return this;
     }
 

@@ -14,8 +14,10 @@ abstract public class BaseTestForAnimeSwitcher {
 
     @Before
     public void setUp(){
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         BaseSeleniumPage.setDriver(driver);
