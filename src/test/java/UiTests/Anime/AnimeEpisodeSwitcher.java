@@ -30,7 +30,7 @@ public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
     @FindBy(xpath = "//*[@id='my-player']/div/div/button[@title='Выбрать качество']")
     private WebElement changeVideoQuality;
 
-    @FindBy(xpath = "//*[@id='my-player']/div[11]/div[8]/div/ul/li[1]/span[text()='1080p']")
+    @FindBy(xpath = "//*[@id='my-player']/div[10]/div[8]/div/ul/li[1]/span[1]")
     private WebElement fullHdQuality;
 
     @FindBy(xpath = "//*[@id='my-player']")
@@ -84,10 +84,5 @@ public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
             Thread.sleep(Duration.ofSeconds(10));
         }while(!buttonNextEpidose.isDisplayed());
         return this;
-    }
-
-    public void nextEpisode(){
-        buttonNextEpidose.click();
-//        return this;
     }
 }

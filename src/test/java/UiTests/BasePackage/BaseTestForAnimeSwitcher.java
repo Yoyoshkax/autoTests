@@ -6,14 +6,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.time.Duration;
 
 abstract public class BaseTestForAnimeSwitcher {
     protected WebDriver driver;
-    private String url = "https://jut.su/bleeach/season-2/episode-2.html";
+    private String url;
 
     @Before
-    public void setUp(){
+    public void setUp() throws IOException {
+        File file = new File("C:\\Users\\astonuser\\Desktop\\url.txt");
+        InputStream input = new FileInputStream(file);
+        byte[] buffer = input.readAllBytes();
+        url = new String(buffer);
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         WebDriverManager.chromedriver().setup();

@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.FileWriter;
 import java.time.Duration;
 
 public class AnimePage extends BaseSeleniumPage {
@@ -47,6 +48,15 @@ public class AnimePage extends BaseSeleniumPage {
         return this;
     }
 
+    public AnimePage saveUrl(){
+        String getUrl = driver.getCurrentUrl();
+        try(FileWriter fileWriter = new FileWriter("C:\\Users\\astonuser\\Desktop\\url.txt");){
+            fileWriter.write(getUrl);
+        }catch(Exception e){
+            System.out.println("Ошибка при записи в файл: " + e.getMessage());
+        }
+        return this;
+    }
     public AnimePage clickPlayButton(){
         playButton.click();
         return this;
@@ -76,6 +86,5 @@ public class AnimePage extends BaseSeleniumPage {
 
     public void nextEpisode(){
         buttonNextEpidose.click();
-//        return this;
     }
 }
