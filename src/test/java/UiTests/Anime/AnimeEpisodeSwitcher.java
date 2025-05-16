@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.FileWriter;
 import java.time.Duration;
 
 
@@ -30,7 +31,7 @@ public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
     @FindBy(xpath = "//*[@id='my-player']/div/div/button[@title='Выбрать качество']")
     private WebElement changeVideoQuality;
 
-    @FindBy(xpath = "//*[@id='my-player']/div[10]/div[8]/div/ul/li[1]/span[1]")
+    @FindBy(xpath = "//*[@id='my-player']/div[13]/div[8]/div/ul/li[1]/span[1]")
     private WebElement fullHdQuality;
 
     @FindBy(xpath = "//*[@id='my-player']")
@@ -41,6 +42,14 @@ public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
         return new AnimePage();
     }
 
+    public void saveUrl(){
+        String getUrl = driver.getCurrentUrl();
+        try(FileWriter fileWriter = new FileWriter("C:\\Users\\Yoyoshka\\Desktop\\url.txt");){
+            fileWriter.write(getUrl);
+        }catch(Exception e){
+            System.out.println("Ошибка при записи в файл: " + e.getMessage());
+        }
+    }
 
     public AnimeEpisodeSwitcher startWatching() throws InterruptedException {
         clickPlayButton();

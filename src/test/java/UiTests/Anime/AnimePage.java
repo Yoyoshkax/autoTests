@@ -50,7 +50,7 @@ public class AnimePage extends BaseSeleniumPage {
 
     public AnimePage saveUrl(){
         String getUrl = driver.getCurrentUrl();
-        try(FileWriter fileWriter = new FileWriter("C:\\Users\\astonuser\\Desktop\\url.txt");){
+        try(FileWriter fileWriter = new FileWriter("C:\\Users\\Yoyoshka\\Desktop\\url.txt");){
             fileWriter.write(getUrl);
         }catch(Exception e){
             System.out.println("Ошибка при записи в файл: " + e.getMessage());

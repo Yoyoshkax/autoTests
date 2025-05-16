@@ -18,7 +18,7 @@ abstract public class BaseTestForAnimeSwitcher {
 
     @Before
     public void setUp() throws IOException {
-        File file = new File("C:\\Users\\astonuser\\Desktop\\url.txt");
+        File file = new File("C:\\Users\\Yoyoshka\\Desktop\\url.txt");
         InputStream input = new FileInputStream(file);
         byte[] buffer = input.readAllBytes();
         url = new String(buffer);
