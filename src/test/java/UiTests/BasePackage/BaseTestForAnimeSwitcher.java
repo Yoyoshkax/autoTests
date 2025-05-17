@@ -1,7 +1,7 @@
 package UiTests.BasePackage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -16,7 +16,7 @@ abstract public class BaseTestForAnimeSwitcher {
     protected WebDriver driver;
     private String url;
 
-    @Before
+    @BeforeEach
     public void setUp() throws IOException {
         File file = new File("C:\\Users\\Yoyoshka\\Desktop\\url.txt");
         InputStream input = new FileInputStream(file);

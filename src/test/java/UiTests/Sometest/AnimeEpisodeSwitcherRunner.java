@@ -2,7 +2,7 @@ package UiTests.Sometest;
 
 import UiTests.Anime.AnimeEpisodeSwitcher;
 import UiTests.BasePackage.BaseTestForAnimeSwitcher;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class AnimeEpisodeSwitcherRunner extends BaseTestForAnimeSwitcher {
 

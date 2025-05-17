@@ -21,6 +21,7 @@ public class LoginPage extends BaseSeleniumPage {
     private WebElement newUserButton;
 
     public LoginPage() {
+        driver.get("https://demoqa.com/login");
         PageFactory.initElements(driver,this);
     }
 

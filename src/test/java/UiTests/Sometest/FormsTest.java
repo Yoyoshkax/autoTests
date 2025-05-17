@@ -2,11 +2,11 @@ package UiTests.Sometest;
 
 import UiTests.BasePackage.BaseTest;
 import UiTests.DemoQaPages.*;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runners.MethodSorters;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class FormsTest extends BaseTest {
 
     @Test

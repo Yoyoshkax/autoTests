@@ -4,13 +4,14 @@ package ApiTests.BooksTests;
 import ApiTests.Specifications.Specification;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.response.ValidatableResponse;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BooksTest {
 
