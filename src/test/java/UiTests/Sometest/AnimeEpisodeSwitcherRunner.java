@@ -14,6 +14,6 @@ public class AnimeEpisodeSwitcherRunner extends BaseTestForAnimeSwitcher {
                 .startWatching();
         do {
             animeEpisodeSwitcher.continueWatch().saveUrl().continueWatching();
-        }while(true);
+        } while (true);
     }
 }

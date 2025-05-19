@@ -14,18 +14,18 @@ public class LoginPage extends BaseSeleniumPage {
     @FindBy(xpath = "//*[@id='password']")
     private WebElement passwordField;
 
-    @FindBy(xpath ="//*[@id ='login']")
+    @FindBy(xpath = "//*[@id ='login']")
     private WebElement loginButton;
 
-    @FindBy(xpath ="//*[@id ='NewUser']")
+    @FindBy(xpath = "//*[@id ='NewUser']")
     private WebElement newUserButton;
 
     public LoginPage() {
         driver.get("https://demoqa.com/login");
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    public LoginPage auth(){
+    public LoginPage auth() {
         userField.sendKeys(TestValues.userName);
         passwordField.sendKeys(TestValues.password);
         loginButton.click();

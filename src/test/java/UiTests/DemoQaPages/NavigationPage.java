@@ -127,10 +127,10 @@ public class NavigationPage extends BaseSeleniumPage {
 
     public NavigationPage() {
         driver.get("https://demoqa.com/automation-practice-form");
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    public NavigationPage checkElements(){
+    public NavigationPage checkElements() {
         elements.click();
         elementTextBox.click();
         elementButtons.click();
@@ -144,13 +144,13 @@ public class NavigationPage extends BaseSeleniumPage {
         return this;
     }
 
-    public NavigationPage checkForms(){
+    public NavigationPage checkForms() {
         forms.click();
         practiceForm.click();
         return this;
     }
 
-    public NavigationPage checkAlertsAndFramesAndWindows(){
+    public NavigationPage checkAlertsAndFramesAndWindows() {
         alersAndFramesAndWindows.click();
         browserWindows.click();
         alerts.click();
@@ -160,7 +160,7 @@ public class NavigationPage extends BaseSeleniumPage {
         return this;
     }
 
-    public NavigationPage checkWidgets(){
+    public NavigationPage checkWidgets() {
         widgets.click();
         accordian.click();
         autoComplete.click();
@@ -174,7 +174,7 @@ public class NavigationPage extends BaseSeleniumPage {
         return this;
     }
 
-    public NavigationPage checkInteractions(){
+    public NavigationPage checkInteractions() {
         interactions.click();
         sortable.click();
         selectable.click();
@@ -184,7 +184,7 @@ public class NavigationPage extends BaseSeleniumPage {
         return this;
     }
 
-    public NavigationPage checkBookStoreApplication(){
+    public NavigationPage checkBookStoreApplication() {
         bookStoreApplication.click();
         login.click();
         bookStore.click();

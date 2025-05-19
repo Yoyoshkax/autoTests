@@ -1,6 +1,7 @@
 package UiTests.Anime;
 
 import UiTests.BasePackage.BaseSeleniumPage;
+import lombok.SneakyThrows;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -13,9 +14,10 @@ import java.time.Duration;
 
 public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
 
-    public AnimeEpisodeSwitcher(){
-        PageFactory.initElements(driver,this);
+    public AnimeEpisodeSwitcher() {
+        PageFactory.initElements(driver, this);
     }
+
     @FindBy(xpath = "//*[@id='my-player']/button")
     private WebElement playButton;
 
@@ -37,20 +39,21 @@ public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
     @FindBy(xpath = "//*[@id='my-player']")
     private WebElement player;
 
-    public AnimePage continueWatch(){
+    public AnimePage continueWatch() {
         buttonNextEpidose.click();
         return new AnimePage();
     }
 
-    public void saveUrl(){
+    public void saveUrl() {
         String getUrl = driver.getCurrentUrl();
-        try(FileWriter fileWriter = new FileWriter("C:\\Users\\Yoyoshka\\Desktop\\url.txt");){
+        try (FileWriter fileWriter = new FileWriter("C:\\Users\\Yoyoshka\\Desktop\\url.txt");) {
             fileWriter.write(getUrl);
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Ошибка при записи в файл: " + e.getMessage());
         }
     }
 
+    @SneakyThrows
     public AnimeEpisodeSwitcher startWatching() throws InterruptedException {
         clickPlayButton();
         changeQualityToFullHd();
@@ -61,28 +64,29 @@ public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
         return this;
     }
 
-    public AnimeEpisodeSwitcher clickPlayButton(){
+    public AnimeEpisodeSwitcher clickPlayButton() {
         playButton.click();
         return this;
     }
 
-    public AnimeEpisodeSwitcher changeQualityToFullHd(){
+    public AnimeEpisodeSwitcher changeQualityToFullHd() {
         changeVideoQuality.click();
         fullHdQuality.click();
         return this;
     }
+
     public AnimeEpisodeSwitcher moveForwardUntilOpeningWillAppear() throws InterruptedException {
         Actions actions = new Actions(driver);
         Thread.sleep(2000);
         do {
             Thread.sleep(200);
             actions.sendKeys(Keys.ARROW_RIGHT).perform();
-        }while(!buttonSkipOpening.isDisplayed());
+        } while (!buttonSkipOpening.isDisplayed());
         return this;
     }
 
-    public AnimeEpisodeSwitcher skipOpening(){
-        if(buttonSkipOpening.isDisplayed()){
+    public AnimeEpisodeSwitcher skipOpening() {
+        if (buttonSkipOpening.isDisplayed()) {
             buttonSkipOpening.click();
         }
         return this;
@@ -91,7 +95,7 @@ public class AnimeEpisodeSwitcher extends BaseSeleniumPage {
     public AnimeEpisodeSwitcher waitUntilButtonNextEpisodeAppear() throws InterruptedException {
         do {
             Thread.sleep(Duration.ofSeconds(10));
-        }while(!buttonNextEpidose.isDisplayed());
+        } while (!buttonNextEpidose.isDisplayed());
         return this;
     }
 }

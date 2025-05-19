@@ -11,17 +11,18 @@ import static java.lang.Thread.sleep;
 
 public class UploadAndDownloadPage extends BaseSeleniumPage {
 
-    public UploadAndDownloadPage(){
+    public UploadAndDownloadPage() {
         driver.get("https://demoqa.com/upload-download");
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
+
     @FindBy(xpath = "//*[@id='downloadButton']")
     private WebElement downloadButton;
 
     @FindBy(xpath = "//*[@id='uploadFile']")
     private WebElement uploadFileButton;
 
-    public UploadAndDownloadPage uploadFile(){
+    public UploadAndDownloadPage uploadFile() {
         WebElement fileInput = uploadFileButton;
         fileInput.sendKeys("C:\\Users\\astonuser\\Desktop\\КАЙФФ.png");
         System.out.println("File uploaded successfully");

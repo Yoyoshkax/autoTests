@@ -40,15 +40,15 @@ public class RegisterPage extends BaseSeleniumPage {
 
     public RegisterPage() {
         driver.get("https://demoqa.com/register");
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    public LoginPage doLogin(){
+    public LoginPage doLogin() {
         backToLoginButton.click();
         return new LoginPage();
     }
 
-    public RegisterPage checkAllElements(){
+    public RegisterPage checkAllElements() {
         backToLoginButton.isDisplayed();
         registerButton.isDisplayed();
         firstNameField.isDisplayed();

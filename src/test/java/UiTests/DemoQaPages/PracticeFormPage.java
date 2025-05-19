@@ -42,7 +42,8 @@ public class PracticeFormPage extends BaseSeleniumPage {
     @FindBy(xpath = "//*[@id='dateOfBirthInput']")
     private WebElement birthDateField;
 
-    @FindBy(xpath = "//*[@class='react-datepicker__year-select']//option[@value = '1995']")  //*[@id="react-select-2-option-0"]
+    @FindBy(xpath = "//*[@class='react-datepicker__year-select']//option[@value = '1995']")
+    //*[@id="react-select-2-option-0"]
     private WebElement birthDateYearValue;
 
     @FindBy(xpath = "//*[@class='react-datepicker__month-select']//option[@value = '5']")
@@ -97,23 +98,19 @@ public class PracticeFormPage extends BaseSeleniumPage {
     private WebElement submitButton;
 
 
-
-
-
-
     public PracticeFormPage() {
         driver.get("https://demoqa.com/automation-practice-form");
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
         this.elementList = driver.findElements(By.xpath("//*[@id='myElementXpath']"));
     }
 
-    public PracticeFormPage checkAllElements(){
+    public PracticeFormPage checkAllElements() {
         elementList
                 .forEach(WebElement::isDisplayed);
         return this;
     }
 
-    public PracticeFormPage fillAllElements(){
+    public PracticeFormPage fillAllElements() {
         firstNameField.click();
         firstNameField.sendKeys("Raman");
         lastNameField.click();
@@ -142,7 +139,7 @@ public class PracticeFormPage extends BaseSeleniumPage {
         return this;
     }
 
-    public NavigationPage moveToNavigationBarElement(){
+    public NavigationPage moveToNavigationBarElement() {
         elements.click();
         elementTextBox.click();
         return new NavigationPage();

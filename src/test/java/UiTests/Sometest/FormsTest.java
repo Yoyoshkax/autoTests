@@ -2,6 +2,7 @@ package UiTests.Sometest;
 
 import UiTests.BasePackage.BaseTest;
 import UiTests.DemoQaPages.*;
+import lombok.SneakyThrows;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -47,6 +48,7 @@ public class FormsTest extends BaseTest {
     }
 
     @Test
+    @SneakyThrows
     public void uploadFileTest() throws InterruptedException {
         UploadAndDownloadPage uploadAndDownloadPage = new UploadAndDownloadPage();
         uploadAndDownloadPage
